@@ -1,0 +1,79 @@
+﻿@model UniProject.Services.Login.UserLoginDto;
+
+@{
+    ViewData["Title"] = "ورود";
+    ViewData["PageName"] = "ورود";
+}
+
+<div class="col-lg-6 align-self-center pad-0 form-section">
+    <div class="form-inner">
+        <a href="@Url.Action("Login", "Account")" class="logo">
+
+        </a>
+        <h3>ورود به حساب کاربری </h3>
+
+        @if (TempData["SucsessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>تبریک، </strong> @TempData["SucsessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>با عرض پوزش، </strong> @TempData["ErrorMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <form asp-action="Login" asp-controller="Account" method="post" id="commonForm" asp-antiforgery="true" novalidate>
+
+            <div class="form-group position-relative clearfix">
+                <input asp-for="Email" class="form-control" placeholder="پست الکترونیکی" aria-label="Email Address">
+                <span class="text-danger">@Html.ValidationMessageFor(m => m.Email)</span>
+                <div class="login-popover login-popover-abs" data-bs-toggle="popover" data-bs-trigger="hover" title="شفاف سازی" data-bs-content="لطفاً ایمیل معتبر وارد کنید.">
+                    <i class="fa fa-info-circle"></i>
+                </div>
+            </div>
+
+            <div class="form-group clearfix position-relative password-wrapper">
+                <input asp-for="Password" type="password" class="form-control" autocomplete="off" placeholder="رمز عبور" aria-label="Password">
+                <i class="fa fa-eye password-indicator"></i>
+                <span class="text-danger">@Html.ValidationMessageFor(m => m.Password)</span>
+            </div>
+
+            <div class="form-group clearfix">
+                <button type="submit" class="btn btn-primary btn-lg btn-theme">ورود</button>
+            </div>
+            <div class="extra-login clearfix">
+                <span>یا وارد شوید با</span>
+            </div>
+        </form>
+
+        <div class="clearfix"></div>
+        <div class="social-list clearfix">
+            <div class="icon facebook">
+                <div class="tooltip">Facebook</div>
+                <span><i class="fa fa-facebook"></i></span>
+            </div>
+            <div class="icon twitter">
+                <div class="tooltip">Twitter</div>
+                <span><i class="fa fa-twitter"></i></span>
+            </div>
+            <div class="icon instagram">
+                <div class="tooltip">Google</div>
+                <span><i class="fa fa-google"></i></span>
+            </div>
+            <div class="icon github mr-0">
+                <div class="tooltip">Linkedin</div>
+                <span><i class="fa fa-linkedin"></i></span>
+            </div>
+        </div>
+
+        <p>حساب کاربری ندارید؟ <a href="@Url.Action("Register", "Account")">از اینجا وارد شوید</a></p>
+    </div>
+</div>
+
+
+

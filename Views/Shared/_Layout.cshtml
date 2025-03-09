@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <title>@ViewData["Title"] - صفحه کاربر </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- External CSS libraries -->
+    <link type="text/css" rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/fonts/flaticon/font/flaticon.css">
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="~/assets/img/favicon.ico" type="image/x-icon">
+
+    <!-- Custom Stylesheet -->
+    <link type="text/css" rel="stylesheet" href="~/assets/css/style.css">
+
+</head>
+<body id="top" dir="rtl">
+    <div class="page_loader"></div>
+
+    <!-- Login 1 start -->
+    <div class="login-1">
+        <div class="container-fluid">
+            <div class="row login-box">
+                    @RenderBody()
+                    <div class="col-lg-6 pad-0 none-992 bg-img">
+                        <div class="lines">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="info">
+                            <div class="animated-text">
+                                <h1>@ViewData["PageName"] <span>حساب کاربری</span></h1>
+                            </div>
+                            <p>با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Login 1 end -->
+        <!-- External JS libraries -->
+        <script src="~/assets/js/jquery-3.6.0.min.js"></script>
+        <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="~/assets/js/jquery.validate.min.js"></script>
+        <script src="~/assets/js/app.js"></script>
+        <!-- Custom JS Script -->
+
+</body>
+
+</html>
